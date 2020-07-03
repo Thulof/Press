@@ -1,0 +1,8 @@
+{
+  "name": "press",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/Thulof/Press.git",
+  "author": "Thulof <vn-group@live.com>",
+  "license": "MIT"
+}
