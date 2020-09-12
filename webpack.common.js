@@ -9,11 +9,19 @@ module.exports = {
       'lodash-es'
     ]
   },
+  resolve:{
+    extensions:['.tsx', '.ts', '.jsx', '.js', '.json'] // 表示这几个的后缀名可以参略
+  },
   module: {
     rules: [
       {
         test: /\.(js|ts)x$/,
         loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
         exclude: /node_modules/
       }
     ],
