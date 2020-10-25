@@ -14,5 +14,8 @@
       ],
       "@babel/preset-react",
       "@babel/typescript"
+    ],
+    "plugins": [
+      ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css"}, "ant"]
     ]
   }

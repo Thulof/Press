@@ -2,7 +2,7 @@
  * 首页入口文件
  */
 import App from './entry/index.tsx';
-import './index.css';
+// import './index.css';
 
 // 引入
 import Bmob from 'hydrogen-js-sdk'

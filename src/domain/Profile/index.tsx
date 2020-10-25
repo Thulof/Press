@@ -1,6 +1,5 @@
 import React, { FC, Fragment, useEffect, useState } from "react";
-import Avatar from "antd/lib/avatar/avatar";
-import { List, Typography, Image } from "antd";
+import { List, Typography, Image, Avatar } from "antd";
 import { Record } from "../../components/Record";
 import { useUserProfile } from "../../hooks/user";
 import { useRecords } from "../../hooks/records";

@@ -5,9 +5,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
 module.exports = {
   entry: {
     main: './src/index.js',
-    vendor: [
-      'lodash-es'
-    ]
+    // vendor: [
+    //   'lodash-es',
+    // ]
   },
   resolve:{
     extensions:['.tsx', '.ts', '.jsx', '.js', '.json'] // 表示这几个的后缀名可以参略
@@ -15,20 +15,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|ts)x?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-        exclude: /node_modules/
+        // exclude: /node_modules/
       },
       {
         test: /\.jpg$/,
         loader: 'file-loader',
         exclude: /node_modules/
-      }
+      },
+      {
+        test: /\.(js|ts)x?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+      },
     ],
   },
   plugins: [
