@@ -6,7 +6,7 @@ import { useUserProfile } from '../../hooks/user';
 import { ThoughtRecord } from '../../model/ThoughtRecord';
 
 export interface RecordEditorProps {
-  onSubmit: (newRecord: ThoughtRecord) => void;
+  onSuccess: () => void;
 }
 
 export const RecordEditor: FC<RecordEditorProps> = (props: RecordEditorProps) => {
@@ -23,7 +23,7 @@ export const RecordEditor: FC<RecordEditorProps> = (props: RecordEditorProps) =>
   };
 
   useEffect(() => {
-    props.onSubmit(newRecord);
+    props.onSuccess();
   }, [newRecord.objectId]);
 
   return (

@@ -4,6 +4,7 @@ import Bmob, { BmobPromise } from "hydrogen-js-sdk";
 import { ThoughtRecord } from '../model/ThoughtRecord';
 import { getRecordById } from '../dao/ThoughtRecord';
 
+// @deprecated
 export const useRecords = (userId: number) => {
   const [records, setRecords] = useState<ThoughtRecord[]>([]);
 
@@ -26,11 +27,13 @@ export const useRecords = (userId: number) => {
   return { records, setRecords };
 };
 
+// @deprecated
 export const useCreateRecord = (userId: number) => {
   const [input, setInput] = useState('');
   const [newRecord, setNewRecord] = useState({
     userId: '1',
     content: '提交中',
+    objectId: '',
   });
   useEffect(() => {
     if (input === '') return;

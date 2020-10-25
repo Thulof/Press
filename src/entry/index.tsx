@@ -5,6 +5,7 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import { Layout, Row, Col } from "antd";
 import { Profile } from "../domain/Profile";
+import BackgroungImage from '../assets/background/nvidia.jpg';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -16,7 +17,7 @@ export default function App() {
         </Header> */}
         <div
           style={{
-            backgroundImage: `url('https://www.wepc.com/wp-content/uploads/2020/08/fredrick-tendong-nUDEzNpPUlA-unsplash-scaled-1200x900.jpg')`,
+            backgroundImage: `url('${BackgroungImage}')`,
             width: "100vw",
             height: "20vh",
           }}

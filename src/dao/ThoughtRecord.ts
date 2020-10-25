@@ -5,22 +5,36 @@ export function createRecord() {
 
 }
 
-export const getRecords = () => {};
+export const delectRecords = objectId => {
+  const query = Bmob.Query('records');
+  query.destroy(objectId).then(res => {
+    console.log(res);
+  }).catch(err => {
+    console.log(err);
+  });
+}
+
+export const getAllRecords = () => {
+  const query = Bmob.Query("records"); // 暂时 Mock 为查询全部
+  query.order("-updatedAt"); // 按照发布时间倒序
+  const queryPromise: BmobPromise<ThoughtRecord[]> = query.find();
+
+  return queryPromise
+      .then(res => res)
+      .catch(err => {
+        console.error(err);
+        return [];
+      });
+};
 
 export const getRecordById = (recordId: string) => {
   const query = Bmob.Query("records"); // 暂时 Mock 为查询全部
   const queryPromise: BmobPromise<ThoughtRecord> = query.get(recordId);
   
   return queryPromise
-    .then((res) => {
-      // @ts-ignore
-      return res;
-    })
+    .then(res => ({ ...res }))
     .catch((err) => {
       console.error(err);
-      return {
-        userId: '1',
-        content: '获取失败',
-      };
+      return { userId: '1', content: '获取失败' };
     });
 }

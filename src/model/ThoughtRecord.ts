@@ -4,4 +4,5 @@
 export interface ThoughtRecord {
   userId: string;
   content: string;
+  objectId: string;
 }
