@@ -32,6 +32,7 @@
     "@types/react-dom": "^16.9.8",
     "antd": "^4.6.3",
     "babel-loader": "^8.1.0",
+    "hydrogen-js-sdk": "^2.2.4",
     "lodash-es": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

@@ -3,9 +3,11 @@ import { useState } from 'react'
 export const useUserProfile = () => {
   const [nickName, setNickName] = useState('Thulof Qu');
   const [slogan, setSlogan] = useState('这是一句个性签名');
-  const [imgUrl, setImgUrl] = useState('https://lh3.googleusercontent.com/proxy/Q23q8AvfEycsq0XygQ6imTCrq3swvwoku4eYlVCOtlGWTsTPgShMQR7vB_9I8n_FOMhGPdBh3u5Zl3ArWt8BgatfZlY');
+  const [imgUrl, setImgUrl] = useState('https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2902873695,2157267194&fm=111&gp=0.jpg');
+  const [userId, setUserId] = useState(1);
 
   return {
+    userId,
     nickName,
     slogan,
     imgUrl,

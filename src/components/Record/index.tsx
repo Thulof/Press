@@ -1,8 +1,13 @@
 import React, { FC, ReactNode } from 'react';
 import { Comment, Avatar, Tooltip } from 'antd';
 import { useUserProfile } from '../../hooks/user';
+import { ThoughtRecord } from "../../model/ThoughtRecord";
 
-export const Record: FC = () => {
+interface RecordProps {
+  data: ThoughtRecord,
+}
+
+export const Record: FC<RecordProps> = (props: RecordProps) => {
   const { nickName, slogan, imgUrl } = useUserProfile();
   const actions: ReactNode[] = [];
 
@@ -18,9 +23,7 @@ export const Record: FC = () => {
       }
       content={
         <p>
-          We supply a series of design principles, practical patterns and high quality design
-          resources (Sketch and Axure), to help people create their product prototypes beautifully
-          and efficiently.
+          {props.data.content}
         </p>
       }
       datetime={
