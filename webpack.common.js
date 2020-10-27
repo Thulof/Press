@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -9,8 +9,8 @@ module.exports = {
     //   'lodash-es',
     // ]
   },
-  resolve:{
-    extensions:['.tsx', '.ts', '.jsx', '.js', '.json'] // 表示这几个的后缀名可以参略
+  resolve: {
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '.json'], // 表示这几个的后缀名可以参略
   },
   module: {
     rules: [
@@ -22,7 +22,7 @@ module.exports = {
       {
         test: /\.jpg$/,
         loader: 'file-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.(js|ts)x?$/,
@@ -35,11 +35,11 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: '首页 - Press',
-      template: './public/index.html'
+      template: './public/index.html',
     }),
   ],
   output: {
     filename: '[name].[hash].js',
-    path: path.resolve(__dirname, 'dist')
-  }
+    path: path.resolve(__dirname, 'dist'),
+  },
 };

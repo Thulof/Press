@@ -1,9 +1,8 @@
-import { FC, Fragment, useCallback, useEffect } from "react";
-import React from "react";
-import { Input, Button } from "antd";
+import React, { FC, useEffect } from 'react';
+
+import { Input, Button } from 'antd';
 import { useCreateRecord } from '../../hooks/records';
-import { useUserProfile } from '../../hooks/user';
-import { ThoughtRecord } from '../../model/ThoughtRecord';
+import useUserProfile from '../../hooks/user';
 
 export interface RecordEditorProps {
   onSuccess: () => void;
@@ -12,12 +11,12 @@ export interface RecordEditorProps {
 export const RecordEditor: FC<RecordEditorProps> = (props: RecordEditorProps) => {
   let content = '';
   const { userId } = useUserProfile();
-  const { input, setInput, newRecord } = useCreateRecord(userId);
-  
+  const { setInput, newRecord } = useCreateRecord(userId);
+
   const changeContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     content = e.target.value;
-  }
-  
+  };
+
   const submit = () => {
     setInput(content);
   };
@@ -33,7 +32,7 @@ export const RecordEditor: FC<RecordEditorProps> = (props: RecordEditorProps) =>
         onChange={changeContent}
         autoSize={{ minRows: 2, maxRows: 6 }}
       />
-      <div style={{ margin: '20px', textAlign: 'center' }}>  
+      <div style={{ margin: '20px', textAlign: 'center' }}>
         <Button type="primary" onClick={submit}>
           发布
         </Button>

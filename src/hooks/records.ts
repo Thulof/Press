@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import Bmob, { BmobPromise } from "hydrogen-js-sdk";
+import Bmob, { BmobPromise } from 'hydrogen-js-sdk';
 import { ThoughtRecord } from '../model/ThoughtRecord';
 import { getRecordById } from '../dao/ThoughtRecord';
 
 // @deprecated
-export const useRecords = (userId: number) => {
+export const useRecords = () => {
   const [records, setRecords] = useState<ThoughtRecord[]>([]);
 
-  const query = Bmob.Query("records"); // 暂时 Mock 为查询全部
-  query.order("-updatedAt"); // 按照发布时间倒序
+  const query = Bmob.Query('records'); // 暂时 Mock 为查询全部
+  query.order('-updatedAt'); // 按照发布时间倒序
   const queryPromise: BmobPromise<ThoughtRecord[]> = query.find();
-  
+
   useEffect(() => {
     queryPromise
       .then((res) => {
@@ -38,28 +38,27 @@ export const useCreateRecord = (userId: number) => {
   useEffect(() => {
     if (input === '') return;
 
-    const query = Bmob.Query("records");
-    query.set("userId", userId.toString());
-    query.set("content", input);
+    const query = Bmob.Query('records');
+    query.set('userId', userId.toString());
+    query.set('content', input);
 
     query
       .save()
-      .then( async (res) => {
+      .then(async (res) => {
         console.log('提交成功', res);
         // @ts-ignore
-        const newRecord = await getRecordById(res.objectId);
+        const fetchedNewRecord = await getRecordById(res.objectId);
         // @ts-ignore
-        setNewRecord(newRecord);
+        setNewRecord(fetchedNewRecord);
       })
       .catch((err) => {
         console.log(err);
       });
-
   }, [input]);
 
   return {
     input,
     setInput,
-    newRecord
-  }
+    newRecord,
+  };
 };
