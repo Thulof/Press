@@ -13,10 +13,18 @@ Webpack + Babel + Typescript
 
 ## TODO:
 ### 技术类：
+- [ ] lint
+- [ ] format
+- [ ] pre-commit
+- [ ] commit-lint
 - [ ] Commit 自动生成 Changelog
-- [ ] Github Action 在推送后自行部署
+
+- [x] Github Action 在推送后自行部署
+    - 使用了 Vercel
+
+- [ ] 自行部署后端服务
 - [ ] 接入单元测试
 
 ### 业务类：
-- [ ] 首页 Feed
+- [ ] 首页
 
