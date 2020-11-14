@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: {
@@ -37,6 +38,7 @@ module.exports = {
       title: '首页 - Press',
       template: './public/index.html',
     }),
+    new Dotenv(),
   ],
   output: {
     filename: '[name].[hash].js',
