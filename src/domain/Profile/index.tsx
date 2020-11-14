@@ -1,10 +1,10 @@
 import React, { FC, Fragment, useEffect, useState } from 'react';
 import { List, Typography, Avatar } from 'antd';
-import Record from '../../components/Record';
+import Record from './components/Record';
 import useUserProfile from '../../hooks/user';
-import { ThoughtRecord } from '../../model/ThoughtRecord';
-import { RecordEditor } from '../../components/Input';
-import { getAllRecords } from '../../dao/ThoughtRecord';
+import { ThoughtRecord } from '../../data/model/ThoughtRecord';
+import { RecordEditor } from './components/Input';
+import { getAllRecords } from '../../data/dao/ThoughtRecord';
 
 const Profile: FC = () => {
   const { nickName, slogan, avatarUrl } = useUserProfile();

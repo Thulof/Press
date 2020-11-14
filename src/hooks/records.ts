@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 import Bmob, { BmobPromise } from 'hydrogen-js-sdk';
-import { ThoughtRecord } from '../model/ThoughtRecord';
-import { getRecordById } from '../dao/ThoughtRecord';
+import { ThoughtRecord } from '../data/model/ThoughtRecord';
+import { getRecordById } from '../data/dao/ThoughtRecord';
 
 // @deprecated
 export const useRecords = () => {

@@ -1,9 +1,9 @@
 import React, { FC, ReactNode } from 'react';
 import { Comment, Avatar, Tooltip } from 'antd';
 import { noop } from 'lodash-es';
-import useUserProfile from '../../hooks/user';
-import { ThoughtRecord } from '../../model/ThoughtRecord';
-import { delectRecords } from '../../dao/ThoughtRecord';
+import useUserProfile from '../../../../hooks/user';
+import { ThoughtRecord } from '../../../../data/model/ThoughtRecord';
+import { delectRecords } from '../../../../data/dao/ThoughtRecord';
 
 interface RecordProps {
   data: ThoughtRecord,

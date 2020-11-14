@@ -1,8 +1,8 @@
 import React, { FC, useEffect } from 'react';
 
 import { Input, Button } from 'antd';
-import { useCreateRecord } from '../../hooks/records';
-import useUserProfile from '../../hooks/user';
+import { useCreateRecord } from '../../../../hooks/records';
+import useUserProfile from '../../../../hooks/user';
 
 export interface RecordEditorProps {
   onSuccess: () => void;
